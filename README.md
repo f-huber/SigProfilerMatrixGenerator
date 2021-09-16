@@ -16,13 +16,13 @@ SigProfilerMatrixGenerator creates mutational matrices for all types of somatic 
 - [Copyright](#copyright)
 - [Contact Information](#contact)
 
-### <a name="introduction"></a> INTRODUCTION
+#### <a name="introduction"></a> INTRODUCTION
 
 The purpose of this document is to provide a guide for using the SigProfilerMatrixGenerator framework to generate mutational matrices for a set of samples with associated mutational catalogues. An extensive Wiki page detailing the usage of this tool can be found at https://osf.io/s93d5/wiki/home/.
 
 For users that prefer working in an R environment, a wrapper package is provided and can be found and installed from: https://github.com/AlexandrovLab/SigProfilerMatrixGeneratorR
 
-### <a name="prerequisites"></a> PREREQUISITES
+#### <a name="prerequisites"></a> PREREQUISITES
 
 The framework is written in PYTHON, however, it also requires the following software with the given versions (or newer):
 
@@ -32,7 +32,7 @@ The framework is written in PYTHON, however, it also requires the following soft
 By default the installation process will save the FASTA files for all chromosomes for the default genome 
 assemblies (GRCh37, GRCH38, mm10, mm9, rn6). As a result, ~3 Gb of storage must be available for the downloads for each genome.
 
-### <a name="quickstartguide"></a> QUICK START GUIDE
+#### <a name="quickstartguide"></a> QUICK START GUIDE
 
 This section will guide you through the minimum steps required to create mutational matrices:
 1. Install the python package using pip:
@@ -77,17 +77,17 @@ $ python3
   
 
 
-### <a name="inputfileformat"></a> INPUT FILE FORMAT
+#### <a name="inputfileformat"></a> INPUT FILE FORMAT
 
 This tool currently supports maf, vcf, simple text file, and ICGC formats. The user must provide variant data adhering to one of these four formats. If the user’s files are in vcf format, each sample must be saved as a separate files. 
 
 
-### <a name="outputfilestructure"></a> OUTPUT FILE STRUCTURE
+#### <a name="outputfilestructure"></a> OUTPUT FILE STRUCTURE
 
 The output structure is divided into three folders: input, output, and logs. The input folder contains copies of the user-provided input files. The outputfolder contains
 a DBS, SBS, ID, and TSB folder (there will also be a plots folder if this parameter is chosen). The matrices are saved into the appropriate folders. The logs folder contains the error and log files for the submitted job.
 
-### <a name="copynumbermatrixgeneration"></a> COPY NUMBER MATRIX GENERATION
+#### <a name="copynumbermatrixgeneration"></a> COPY NUMBER MATRIX GENERATION
 
 In order to generate a copy number matrix, provide the an absolute path to a multi-sample segmentation file obtained from one of the following copy number calling tools (if you have individual sample files, please combine them into one file with the first column corresponding to the sample name):
 
@@ -110,7 +110,7 @@ $ python3
 >>scna.generateCNVMatrix(file_type, input_file, project, output_path)
 
 ```
-### <a name="supportedgenomes"></a> SUPPORTED GENOMES
+#### <a name="supportedgenomes"></a> SUPPORTED GENOMES
 
 This tool currently supports the following genomes:
 
@@ -140,17 +140,17 @@ WBcel235 [c_elegans] GCA_000002985.3, Oct 2014. Last updated Jan 2019. This geno
 
 *One can specify "_havana" to the end of the genome to include annotations in t-cell receptor genes and IG clusters (available for GRCh37, GRCh38, and mm10).
 
-### <a name="logfiles"></a> LOG FILES
+#### <a name="logfiles"></a> LOG FILES
 
 All errors and progress checkpoints are saved into *sigProfilerMatrixGenerator_[project]_[genome].err* and *sigProfilerMatrixGenerator_[project]_[genome].out*, respectively. 
 For all errors, please email the error and progress log files to the primary contact under CONTACT INFORMATION.
 
-### <a name="Citation"></a> CITATION
+#### <a name="Citation"></a> CITATION
 
 Bergstrom EN, Huang MN, Mahto U, Barnes M, Stratton MR, Rozen SG, and Alexandrov LB (2019) SigProfilerMatrixGenerator: a tool for visualizing and exploring patterns of small mutational events. **BMC Genomics** 20, Article number: 685.
 https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-6041-2
 
-### <a name="copyright"></a> COPYRIGHT
+#### <a name="copyright"></a> COPYRIGHT
 
 Copyright (c) 2019, Erik Bergstrom [Alexandrov Lab] All rights reserved.
 
@@ -162,6 +162,6 @@ Redistributions in binary form must reproduce the above copyright notice, this l
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 
-### <a name="contactinformation"></a> CONTACT INFORMATION
+#### <a name="contactinformation"></a> CONTACT INFORMATION
 
 Please address any queries or bug reports to Erik Bergstrom at ebergstr@eng.ucsd.edu. Please address any queries or bug reports related to CNV's or SV's to Azhar Khandekar at akhandek@eng.ucsd.edu. Additional support can be provided by Mark Barnes at mdbarnes@health.ucsd.edu.
